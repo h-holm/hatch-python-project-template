@@ -3,7 +3,7 @@
 #
 # [constraints] requirements.txt (SHA256: 0471236183fe9ece39877ab280b681424281e71a35531b3ec8fe4ffe01f494f2)
 #
-# - typer==0.21.0
+# - typer==0.21.1
 # - tabulate==0.9.0
 # - mypy==1.19.1
 # - pip==25.3
@@ -11,7 +11,7 @@
 # - pydantic==2.12.5
 # - pydantic-core==2.41.5
 # - pytest==9.0.2
-# - ruff==0.14.10
+# - ruff==0.14.12
 #
 
 annotated-types==0.7.0 \
@@ -427,7 +427,7 @@ rich==14.2.0 \
     # via
     #   -c requirements.txt
     #   typer
-ruff==0.14.10 \
+ruff==0.14.12 \
     --hash=sha256:104c49fc7ab73f3f3a758039adea978869a918f31b73280db175b43a2d9b51d6 \
     --hash=sha256:1484983559f026788e3a5c07c81ef7d1e97c1c78ed03041a18f75df104c45405 \
     --hash=sha256:16a01dfb7b9e4eee556fbfd5392806b1b8550c9b4a9f6acd3dbe6812b193c70a \
@@ -460,7 +460,7 @@ tabulate==0.9.0 \
     # via
     #   -c requirements.txt
     #   hatch.envs.lint
-typer==0.21.0 \
+typer==0.21.1 \
     --hash=sha256:c79c01ca6b30af9fd48284058a7056ba0d3bf5cf10d0ff3d0c5b11b68c258ac6 \
     --hash=sha256:c87c0d2b6eee3b49c5c64649ec92425492c14488096dfbc8a0c2799b2f6f9c53
     # via
