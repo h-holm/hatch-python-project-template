@@ -22,7 +22,7 @@ repos:
   # The built-in `check-json` hook does not support JSON5 files (~= JSON with comments and trailing commas). To lint
   # JSON5 files, use the `check-json5` hook instead.
   - repo: https://gitlab.com/bmares/check-json5
-    rev: v1.0.0
+    rev: v1.0.1
     hooks:
       - id: check-json5
 
