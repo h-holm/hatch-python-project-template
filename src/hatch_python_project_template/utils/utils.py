@@ -17,7 +17,7 @@ if TYPE_CHECKING:
 LOGGER = logging.getLogger(__name__)
 
 
-class LogLevel(str, enum.Enum):
+class LogLevel(enum.StrEnum):
     """Log level."""
 
     CRITICAL = "critical"
