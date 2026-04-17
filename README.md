@@ -6,7 +6,7 @@
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![Mypy](https://img.shields.io/badge/type%20checked-mypy-039dfc)](https://github.com/python/mypy)
 [![Pytest](https://img.shields.io/static/v1?label=‎&message=Pytest&logo=Pytest&color=b647c4&logoColor=white)](https://docs.pytest.org)
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![prek](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/j178/prek/master/docs/assets/badge-v0.json)](https://github.com/j178/prek)
 [![Deploy to Cloud Run](https://github.com/h-holm/hatch-python-project-template/workflows/Deploy%20to%20Cloud%20Run/badge.svg)](https://github.com/h-holm/hatch-python-project-template/actions/workflows/deploy-to-cloud-run.yaml)
 [![CodeQL](https://github.com/h-holm/hatch-python-project-template/workflows/CodeQL%20Analysis/badge.svg)](https://github.com/h-holm/hatch-python-project-template/actions/workflows/codeql-analysis.yaml)
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/h-holm/hatch-python-project-template/main.svg)](https://results.pre-commit.ci/latest/github/h-holm/hatch-python-project-template/main)
@@ -30,8 +30,8 @@ reporting
 logic from tests and project metadata
 * Sane logging configured in a single [logging.conf](./src/hatch_python_project_template/logging.conf) file
 * Optional quality-of-life add-ons:
-  * [pre-commit](https://github.com/pre-commit/pre-commit) hooks installable via the `hooks` script of the `lint` Hatch
-  environment
+  * [prek](https://github.com/j178/prek) pre-commit hooks installable via the
+    `hooks` script of the `lint` Hatch environment
   * (further) enforcing of uniform formatting via an [.editorconfig](./.editorconfig)
   * recommended [VS Code](https://code.visualstudio.com) settings and extensions through a [.vscode](./.vscode)
   subdirectory
@@ -92,14 +92,14 @@ hatch run test:cov-xml                   # To generate a `coverage.xml` that can
 
 The `lint` Hatch environment defines scripts to (1) perform [`ruff`](https://github.com/astral-sh/ruff)-based
 formatting and linting, (2) run [`mypy`](https://github.com/python/mypy)-based static type checking and (3) set up
-[`pre-commit`](https://github.com/pre-commit/pre-commit) hooks synced with the environment:
+[`prek`](https://github.com/j178/prek) hooks synced with the environment:
 
 ```shell
 hatch run lint:lint    # To run a `ruff`-based style check followed by `mypy` type checking.
 hatch run lint:style   # To run (only) a `ruff`-based style check.
 hatch run lint:typing  # To run (only) `mypy`-based type checking.
 hatch run lint:fix     # To attempt to fix issues identified by `ruff`.
-hatch run lint:hooks   # To set up `pre-commit` hooks that always align with the "lint" Hatch environment.
+hatch run lint:hooks   # To set up `prek` hooks that always align with the "lint" Hatch environment.
 ```
 
 ### Upgrading Dependencies
