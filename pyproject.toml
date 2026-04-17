@@ -62,8 +62,8 @@ upgrade-pkg = "PIP_COMPILE_UPGRADE_PACKAGE='{args}' hatch env run --env {env_nam
 # Default environment used by Hatch if no other env is explicitly specified.
 [tool.hatch.envs.default]
 dependencies = [
-  "typer~=0.24.0",
-  "tabulate~=0.9.0",
+  "typer~=0.24.1",
+  "tabulate~=0.10.0",
 ]
 installer = "uv"
 pip-compile-constraint = "default" # Keep locks between default and other environments consistent.
@@ -80,9 +80,9 @@ type = "pip-compile"
 [tool.hatch.envs.test]
 # Use `extra-dependencies` to inherit and extend upon the dependencies of the default env.
 extra-dependencies = [
-  "pytest~=9.0.2",
+  "pytest~=9.0.3",
   "pytest-asyncio~=1.3.0",
-  "pytest-cov~=7.0.0",
+  "pytest-cov~=7.1.0",
   "pytest-mock~=3.15.1",
 ]
 
@@ -103,13 +103,13 @@ python = ["3.14"]
 
 [tool.hatch.envs.lint]
 extra-dependencies = [
-  "mypy~=1.19.1",
+  "mypy~=1.20.1",
   "pip~=26.0.1",  # To enable `mypy` to `pip install` stubs.
-  "pre-commit~=4.5.1",
-  "pydantic~=2.12.5",
-  "pydantic-core~=2.41.5",
-  "pytest~=9.0.2",
-  "ruff~=0.15.1",
+  "prek~=0.3.9",
+  "pydantic~=2.13.2",
+  "pydantic-core~=2.46.2",
+  "pytest~=9.0.3",
+  "ruff~=0.15.11",
 ]
 
 [tool.hatch.envs.lint.scripts]
@@ -131,22 +131,23 @@ typing = [
   "echo \"VERSION: `python -m mypy --version`\"",
   "python -m mypy --install-types --non-interactive {args}",
 ]
-# For use as a `pre-commit` hook, define a simpler `typing` script that (1) ignores missing imports
-# and (2) does not `--install-types`.
+# For use as a `prek` hook, define a simpler `typing` script that (1) ignores
+# missing imports and (2) does not `--install-types`.
 simple-typing = [
   "echo \"VERSION: `python -m mypy --version`\"",
   "python -m mypy --ignore-missing-imports {args}",
 ]
-# Define a `lint` script that runs full-scale style, formatting and type checks ...
+# Define a `lint` script that runs style, formatting and type checks.
 lint = [
   "style",
   "typing",
 ]
-# Set up and run `pre-commit` hooks. Run the `lint` script to ensure any necessary library stubs are installed.
+# Set up and run `prek` hooks. Run the `lint` script to ensure all necessary
+# library stubs are installed.
 hooks = [
-  "python -m pre_commit install",
+  "python -m prek install",
   "typing",
-  "python -m pre_commit",
+  "python -m prek",
 ]
 
 ##################
@@ -185,7 +186,7 @@ warn_unused_ignores = true
 addopts = "--cov=src/hatch_python_project_template --cov-report=term-missing --doctest-glob='*.md'"
 asyncio_default_fixture_loop_scope = "function"
 asyncio_mode = "strict"
-minversion = "9.0.2"
+minversion = "9.0.3"
 pythonpath = ["src"]
 testpaths = ["tests"]
 
